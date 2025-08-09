@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>シンプル電卓</title>
+</head>
+<body>
+    <h2>足し算アプリ</h2>
+    <input type="number" id="num1" placeholder="数字1">
+    <input type="number" id="num2" placeholder="数字2">
+    <button onclick="calculate()">計算する</button>
+    <p id="result"></p>
+
+    <script>
+        function calculate() {
+            let a = parseFloat(document.getElementById("num1").value);
+            let b = parseFloat(document.getElementById("num2").value);
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById("result").innerText = "数字を入力してください";
+                return;
+            }
+            let sum = a + b;
+            document.getElementById("result").innerText = "合計: " + sum;
+        }
+    </script>
+</body>
+</html>
